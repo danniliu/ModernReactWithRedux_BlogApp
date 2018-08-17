@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import { fetchPosts } from '../actions/index';
+import { fetchPosts } from '../actions';
 
 
 class PostsIndex extends Component {
@@ -14,7 +14,7 @@ class PostsIndex extends Component {
     renderPosts(){
         console.log('5: ');
         console.log(this.props.posts);
-        _.map(this.props.posts, post => {
+        return _.map(this.props.posts, post => {
             return (
                 <li className="list-group-item" key={post.id}>
                     {post.title}
